@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 
 public class Functions {
 
-    private String transform(String sentence, Predicate<String> checkWordLenght, Function<String, String> transfornationMethod) {
+    public static String transform  (String sentence, Predicate<String> checkWordLenght, Function<String, String> transfornationMethod) {
         String words[] = sentence.split(" ");
 
         return Stream.of(words)

@@ -3,7 +3,7 @@ public class CalcTest {
     //input.lenght() == 3->input.toUpperCase()
     //input.lenght() == 4->input.toLowerCase()
     //input
-    public static String checkString(String input) throws IncorrectException {
+    public static String checkString(String input) {
         if (input != null) {
             if (input.length() == 3) {
                 return input.toUpperCase();
@@ -12,11 +12,8 @@ public class CalcTest {
                 return input.toLowerCase();
             }
             return input;
+
         }
-        else{
-            throw new IncorrectException("input is null!");
-        }
+        return input;
     }
-
-
 }

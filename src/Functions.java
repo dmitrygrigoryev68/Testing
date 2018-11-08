@@ -67,7 +67,7 @@ public class Functions {
                 .stream()
                 .filter(s -> s.getAge() > 17)
                 .map(Person::getName)
-                .collect(Collectors.joining(" and ", "In Germany ", " are of legal age.\n"));
+                .collect(Collectors.joining(" and ", "In Germany ", " are of legal age."));
     }
 
     public static Long firstBooksFromSentenceCounter(String book, String sentence) {

@@ -1,8 +1,6 @@
 import static java.util.Arrays.asList;
 import static org.junit.Assert.*;
-
 import org.junit.Test;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -87,7 +85,7 @@ public class DemoTest {
         names.add(null);
         names.add("Adam");
         List<String> actual = Functions.distinctedNames(names);
-        assertEquals("List", asList("Ivan", "Maria", "Adolf", "Josef", null  , "Adam"), actual);
+        assertEquals("List", asList("Ivan", "Maria", "Adolf", "Josef", null, "Adam"), actual);
     }
 
     @Test
@@ -130,6 +128,7 @@ public class DemoTest {
         Map<Person, List<BankAccount>> actual = Functions.groupByPerson(p1, accounts);
         assertEquals(actual.get(p1), asList(b1, b2, b3));
     }
+
     @Test
     public void schouldMapAccByPeson() {
         Address a1 = new Address("Lenin", "101");
@@ -153,11 +152,12 @@ public class DemoTest {
 
         List<BankAccount> accounts = asList(b1, b2, b3, b4, b5, b6, b7, b8);
         Map<Person, List<BankAccount>> actual = Functions.mapAccByPerson(accounts);
-        assertEquals(actual.get(p1), asList(b1, b2, b3));
-        assertEquals(actual.get(p2), asList(b4, b5));
-        assertEquals(actual.get(p3), asList(b6, b7));
-        assertEquals(actual.get(p4), asList(b8));
+        assertEquals("Map", actual.get(p1), asList(b1, b2, b3));
+        assertEquals("Map", actual.get(p2), asList(b4, b5));
+        assertEquals("Map", actual.get(p3), asList(b6, b7));
+        assertEquals("Map", actual.get(p4), asList(b8));
     }
+
     @Test
     public void schouldIbanByStars() {
         Address a1 = new Address("Lenin", "101");
@@ -181,10 +181,11 @@ public class DemoTest {
 
         List<BankAccount> accounts = asList(b1, b2, b3, b4, b5, b6, b7, b8);
         List<String> actual = Functions.ibanWithStars(accounts);
-        assertEquals("List",asList("DE567***************","DE567***************","DE567***************"
-                ,"DE567***************","DE567***************","DE567***************","DE567***************"
-                ,"DE567***************"),actual);
+        assertEquals("List", asList("DE567***************", "DE567***************", "DE567***************"
+                , "DE567***************", "DE567***************", "DE567***************", "DE567***************"
+                , "DE567***************"), actual);
     }
+
     @Test
     public void shouldSumAgePersonsOlderThan17() {
         Address a1 = new Address("Lenin", "101");
@@ -197,11 +198,12 @@ public class DemoTest {
         Person p3 = new Person("Oleg Braga", 41, a3);
         Person p4 = new Person("Bogdan Wlaga", 17, a4);
 
-        List<Person> users = asList(p1,p2,p3,p4);
+        List<Person> users = asList(p1, p2, p3, p4);
         int sumAge = Functions.sumOfAgesPersonsOlderThan17(users);
         int assertAge = 82;
         assertEquals(sumAge, assertAge);
     }
+
     @Test
     public void shouldLegalageString() {
         Address a1 = new Address("Lenin", "101");
@@ -214,24 +216,25 @@ public class DemoTest {
         Person p3 = new Person("Oleg Braga", 41, a3);
         Person p4 = new Person("Bogdan Wlaga", 17, a4);
 
-        List<Person> persons = asList(p1,p2,p3,p4);
+        List<Person> persons = asList(p1, p2, p3, p4);
         String legalString = Functions.legalAgeString(persons);
         assertEquals(legalString, "In Germany Ivan Draga and Oleg Braga are of legal age.");
     }
+
     @Test
     public void shouldFirstBooksFromSentenceCounter() {
         String sentence = "To be or not to be - that is the question!";
-        long sumBooks = Functions.firstBooksFromSentenceCounter("t",sentence);
+        long sumBooks = Functions.firstBooksFromSentenceCounter("t", sentence);
         long assertBooks = 3;
         assertEquals(sumBooks, assertBooks);
+
     }
+
     @Test
     public void shouldIsTheStringInteger() {
-        String integer = "128348395298592";
+        String integer = "142334645765879";
+
         boolean result = Functions.isTheStringInteger(integer);
         assertEquals(result, true);
     }
-
-
-
 }

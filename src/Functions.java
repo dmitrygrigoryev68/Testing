@@ -80,6 +80,7 @@ public class Functions {
     }
 
     public static boolean isTheStringInteger(String string) {
+        if (string.equals("")) return false;
         return string.chars().allMatch((Character::isDigit));
     }
 

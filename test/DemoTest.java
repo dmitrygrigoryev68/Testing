@@ -1,6 +1,8 @@
 import static java.util.Arrays.asList;
 import static org.junit.Assert.*;
+
 import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -99,8 +101,8 @@ public class DemoTest {
         Person p3 = new Person("Oleg Braga", 41, a3);
 
         List<Person> persons = asList(p1, p2, p3);
-        Map<Integer, List<Person>> actual = Functions.groupByAge(41, persons);
-        assertEquals(actual.get(41), asList(p1, p3));
+        Map<Integer, List<Person>> actual = Functions.groupByAge(16, persons);
+        assertEquals(actual.get(16), asList(p2));
     }
 
     @Test
@@ -232,9 +234,9 @@ public class DemoTest {
 
     @Test
     public void shouldIsTheStringInteger() {
-        String integer = "142334645765879";
-
+        String integer = "";
         boolean result = Functions.isTheStringInteger(integer);
-        assertEquals(result, true);
+        assertEquals(result, false);
+        assertNotNull(result);
     }
 }
